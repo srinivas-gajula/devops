@@ -33,11 +33,13 @@ ansible
    |
    |
    |\
-   | |_ playbook1.yml 
+   | |_  playbooks
+   |      \ 
+   |       |_ playbook1.yml 
+   |       |
+   |	   |
+   |       |_ playbook2.yml
    |
-   |
-   |\ 
-   | |_ playbook2.yml
    |
    |
    |_ _ ansible.cfg
