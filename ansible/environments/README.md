@@ -3,6 +3,7 @@
 
 This is the place where you would add your inventories 
 
+```
 ansible 
    \
      environments
@@ -10,3 +11,4 @@ ansible
              |_ dev
 	     |
 	     |_ prod
+```
