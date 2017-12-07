@@ -5,7 +5,7 @@
 
 Following is our  recommended layout for organizing your ansible code.  There are a couple of alternatives as discusses on [official documentation](http://docs.ansible.com/ansible/latest/playbooks_best_practices.html#directory-layout)
 
-
+```
 ansible
    |\
    | |_ environments
@@ -43,5 +43,5 @@ ansible
    |_ _ ansible.cfg
  
     
-   
+```
    
