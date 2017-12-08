@@ -1,7 +1,7 @@
 ---
 # tasks file for common
-- include: packages-Debian.yml
+- import_tasks: packages-Debian.yml
   when: ansible_os_family == 'Debian'
 
-- include: env-Debian.yml
+- import_tasks: env-Debian.yml
   when: ansible_os_family == 'Debian'
