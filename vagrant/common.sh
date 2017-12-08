@@ -6,7 +6,7 @@ if [ ! -e /opt/.common_done ]; then
   sudo apt-get update 
 
   echo "I: Install pre requisite packages...."
-  sudo apt-get install -yq  python-minimal python-simplejson aptitude
+  sudo apt-get install -yq  python-minimal python-simplejson python-apt
 
   if [ -e /tmp/hosts ]; then
     echo "I: Copy hosts file to correct systems path.."
