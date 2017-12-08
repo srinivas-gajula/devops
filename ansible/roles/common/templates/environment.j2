@@ -1,0 +1,4 @@
+PATH="{% for path in system['paths']  %}
+{{ path }}
+{%- if not loop.last %}:{% endif %}
+{% endfor %}"

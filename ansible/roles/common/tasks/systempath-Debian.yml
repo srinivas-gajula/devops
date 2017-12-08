@@ -1,0 +1,22 @@
+---
+  - name: set system path
+    template:
+      src: environment.j2
+      dest: /etc/environment
+      mode: '0644'
+      owner: root
+      group: root
+
+  - name: create default executables path
+    file:
+      path: /opt/bin
+      state: directory
+      owner: root
+
+  - name: set additionals paths
+    template:
+      src: Z01-additional-paths.sh.j2
+      dest: /etc/profile.d/Z01-additional-paths.sh
+      mode: '0755'
+      owner: root
+      group: root
