@@ -8,3 +8,7 @@ common:
 additional:
   paths:
     - /opt/bin
+
+env:
+  variables:
+    - "ORGNAME=School of Devops"
