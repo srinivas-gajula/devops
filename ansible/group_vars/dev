@@ -11,4 +11,5 @@ additional:
 
 env:
   variables:
-    - "ORGNAME=School of Devops"
+    - ORGNAME=School of Devops
+
