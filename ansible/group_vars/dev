@@ -1,3 +1,4 @@
+
 common:
   packages:
     - curl
@@ -8,8 +9,13 @@ common:
 additional:
   paths:
     - /opt/bin
+    - /usr/local/node-v4.8.6-linux-x64/bin
+    - /root/.yarn/bin
+    - /usr/local/go/bin
+    - /opt/go/bin
 
 env:
   variables:
     - ORGNAME=School of Devops
-
+    - GOPATH=/opt/go
+    - GOROOT=/usr/local/go

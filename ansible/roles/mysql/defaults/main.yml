@@ -1,0 +1,16 @@
+---
+mysql:
+  config:
+    user: mysql
+    port: 3306
+    datadir: /var/lib/mysql
+    bind: 0.0.0.0
+    pid: /var/run/mysqld/mysqld.pid
+    socket: /var/run/mysqld/mysqld.sock
+    cnfpath: /etc/mysql/my.cnf
+  service: mysql
+  pkg:
+    server: mariadb-server
+    client: mariadb-client
+    python: python-mysqldb
+  server: false

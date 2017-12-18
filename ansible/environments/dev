@@ -4,11 +4,10 @@ node1
 [catalogue]
 node2
 
-[db]
+[catalogue_db]
 node3
 
 [dev:children]
 frontend
 catalogue
-db
-
+catalogue_db
