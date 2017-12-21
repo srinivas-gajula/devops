@@ -1,14 +1,4 @@
-[frontend]
-node1
+# add inventory for dev env to this file
 
-[catalogue]
-node2
 
-[db]
-node3
-
-[dev:children]
-frontend
-catalogue
-db
 
