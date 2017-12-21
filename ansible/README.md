@@ -1,7 +1,7 @@
 
 
 
-## Ansible Code Layout 
+## Ansible Code Layout
 
 Following is our  recommended layout for organizing your ansible code.  There are a couple of alternatives as discusses on [official documentation](http://docs.ansible.com/ansible/latest/playbooks_best_practices.html#directory-layout)
 
@@ -15,7 +15,7 @@ ansible
    |          |_ prod
    |
    |
-   |\ 
+   |\
    | |_ group_vars
    |        \
    |         |_ all
@@ -33,17 +33,16 @@ ansible
    |
    |
    |\
-   | |_  playbooks
-   |      \ 
-   |       |_ playbook1.yml 
-   |       |
-   |	   |
-   |       |_ playbook2.yml
+   | |  
+   |  \
+   |   |_ playbook1.yml
+   |   |
+   |	 |
+   |   |_ playbook2.yml
    |
    |
    |
    |_ _ ansible.cfg
- 
-    
+
+
 ```
-   
