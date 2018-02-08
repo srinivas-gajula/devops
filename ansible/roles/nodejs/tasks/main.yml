@@ -2,15 +2,15 @@
 # tasks file for nodejs
   - name: download nodejs from source
     unarchive:
-      src: https://nodejs.org/dist/latest-v4.x/node-v4.8.6-linux-x64.tar.gz
+      src: https://nodejs.org/dist/v4.8.6/node-v4.8.6.tar.xz
       dest: /usr/local
       remote_src: yes
-      creates: /usr/local/node-v4.8.6-linux-x64
+      creates: /usr/local/node-v4.8.6
 
   - name: symlink node to nodejs
     file:
-      src: /usr/local/node-v4.8.6-linux-x64/bin/node
-      dest: /usr/local/node-v4.8.6-linux-x64/bin/nodejs
+      src: /usr/local/node-v4.8.6/bin/node
+      dest: /usr/local/node-v4.8.6/bin/nodejs
       state: link
 
   - name: download script to install yarn
