@@ -9,7 +9,7 @@ common:
 additional:
   paths:
     - /opt/bin
-    - /usr/local/node-v4.8.6/bin
+    - /usr/local/node-v4.8.6-linux-x64/bin
     - /root/.yarn/bin
     - /usr/local/go/bin
     - /opt/go/bin
