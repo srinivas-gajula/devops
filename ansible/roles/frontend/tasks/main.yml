@@ -1,0 +1,4 @@
+---
+# tasks file for frontend
+- include_tasks: deploy.yml
+  tags: [deploy]

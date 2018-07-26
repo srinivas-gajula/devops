@@ -1,0 +1,38 @@
+- name: check if the previous version of frontend is running
+  find: 
+    paths: /opt/frontend/
+    patterns: "frontend"
+  register: results
+
+- name: delete the previous deployment if exists
+  file:
+    path: "{{ itme['path'] }}"
+    state: absent
+  with_items: "{{ find_results['files'] }}"
+
+- name: create releases directory
+  file:
+    path: /opt/apps/frontend/releases
+    state: directory
+    recurse: yes
+    mode: 0644
+
+- name: download binary from registry
+  get_url:
+    url: "{{ binary_url }}"
+    dest: /opt/apps/frontend/releases
+
+- name: create deployment directory
+  file:
+    path: /opt/frontend
+    state: directory
+    mode: 0744
+
+- name: create symlink to the deployment directory
+  file:
+    src: /opt/apps/frontend/releases
+    dest: /opt/frontend
+    state: link
+
+- name: start frontend service
+  command: /opt/frontend
