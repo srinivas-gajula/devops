@@ -8,7 +8,7 @@
   file:
     path: "{{ itme['path'] }}"
     state: absent
-  with_items: "{{ find_results['files'] }}"
+  with_items: "{{ results['files'] }}"
 
 - name: create releases directory
   file:
@@ -17,10 +17,13 @@
     recurse: yes
     mode: 0644
 
-- name: download binary from registry
-  get_url:
-    url: "{{ binary_url }}"
+- name: download release from registry
+  unarchive:
+    src: "{{ release_url }}"
     dest: /opt/apps/frontend/releases
+    extra_opts: [--strip-components=1]
+    remote_src: yes
+    mode: 0644
 
 - name: create deployment directory
   file:
@@ -33,6 +36,15 @@
     src: /opt/apps/frontend/releases
     dest: /opt/frontend
     state: link
+    force: true
+
+- name: copy init script for frontend
+  copy:
+    src: frontend
+    dest: /etc/init.d/frontend
+    mode: 0744
 
 - name: start frontend service
-  command: /opt/frontend
+  service:
+    name: frontend
+    state: started

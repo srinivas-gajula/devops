@@ -1,3 +1,9 @@
 # add inventory for dev env to this file
+[frontend]
+35.196.56.84
 
+[catalogue]
+35.196.214.216
 
+[carts]
+35.227.109.131
