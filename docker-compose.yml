@@ -58,17 +58,6 @@ services:
     domainname: codespaces.io
     hostname: carts
     restart: always
-  db:
-    image: codespaces/ansible-node-centos-6:v0.3.6
-    ports:
-      - "3306:3306"
-    networks:
-      custom:
-        ipv4_address: 192.168.61.14
-    dns: 8.8.8.8
-    domainname: codespaces.io
-    hostname: db
-    restart: always
   jenkins:
     image: schoolofdevops/jenkins
     ports:
