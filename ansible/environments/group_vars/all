@@ -1,0 +1,6 @@
+common:
+  packages:
+    - curl
+    - git
+    - wget
+    - build-essential
