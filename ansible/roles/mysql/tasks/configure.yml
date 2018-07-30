@@ -14,9 +14,11 @@
    tags:
     - configure
 
- - debug:
-     msg: "database dict has {{ item.name }} and {{ item.state }}"
-   loop: "{{ lookup('dict', databases) }}"
+- vars: 
+    msg: | 
+           GROUPS Variables ("groups"):
+        --------------------------------
+        {{ groups | to_nice_json }}
 
  - name: create mysql databases
    mysql_db:
