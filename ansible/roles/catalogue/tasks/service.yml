@@ -35,9 +35,9 @@
     state: link
     force: true
 
-- name: copy init script for catalogue
-  copy:
-    src: catalogue
+- name: generate init script for catalogue
+  template:
+    src: catalogue.j2
     dest: /etc/init.d/catalogue
     mode: 0755
 
