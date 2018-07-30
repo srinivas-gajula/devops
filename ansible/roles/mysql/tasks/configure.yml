@@ -10,7 +10,7 @@
  - name: start mysql service
    service:
      name: mysql
-     status: started
+     state: started
    tags:
     - configure
 
