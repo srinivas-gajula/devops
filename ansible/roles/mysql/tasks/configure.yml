@@ -17,7 +17,7 @@
  - name: create mysql databases
    mysql_db:
      name: "{{ item.name }}"
-     state: "{{ item.state }}"
+     state: "{{ item.value.state }}"
    with_dict: "{{ mysql['databases'] }}"
    tags:
     - configure 
