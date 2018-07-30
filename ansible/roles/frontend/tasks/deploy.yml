@@ -44,6 +44,11 @@
     dest: /etc/init.d/frontend
     mode: 0755
 
+- name: install node application dependencies before start
+  npm:
+    path: /opt/apps/frontend/releases
+    state: latest
+
 - name: start frontend service
   service:
     name: frontend
