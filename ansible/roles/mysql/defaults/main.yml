@@ -13,4 +13,4 @@ mysql:
     server: mariadb-server
     client: mariadb-client
     python: python-mysqldb
-  server: false
+  server: true
