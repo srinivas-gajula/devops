@@ -11,6 +11,8 @@
    service:
      name: mysql
      status: started
+   tags:
+    - configure
 
  - name: create mysql databases
    mysql_db:
