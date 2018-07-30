@@ -15,7 +15,7 @@
     path: /opt/apps/frontend/releases
     state: directory
     recurse: yes
-    mode: 0644
+    mode: 0755
 
 - name: download release from registry
   unarchive:
@@ -23,13 +23,13 @@
     dest: /opt/apps/frontend/releases
     extra_opts: [--strip-components=1]
     remote_src: yes
-    mode: 0644
+    mode: 0755
 
 - name: create deployment directory
   file:
     path: /opt/frontend
     state: directory
-    mode: 0744
+    mode: 0755
 
 - name: create symlink to the deployment directory
   file:
@@ -42,7 +42,7 @@
   copy:
     src: frontend
     dest: /etc/init.d/frontend
-    mode: 0744
+    mode: 0755
 
 - name: start frontend service
   service:
