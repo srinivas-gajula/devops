@@ -28,7 +28,7 @@ services:
   frontend:
     image: codespaces/ansible-node-ubuntu-1404:v0.1.0
     ports:
-       - "80:80"
+       - "80:8079"
     networks:
       custom:
         ipv4_address: 192.168.61.11
