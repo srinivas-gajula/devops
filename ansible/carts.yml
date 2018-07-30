@@ -1,5 +1,5 @@
 ---
-  - hosts: catalogue
+  - hosts: carts
     become: yes
     roles:
       - { role: undergreen.mongodb }
