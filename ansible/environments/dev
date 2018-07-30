@@ -1,9 +1,9 @@
 # add inventory for dev env to this file
 [frontend]
-35.196.56.84
+192.168.61.11
 
 [catalogue]
-35.196.214.216
+192.168.61.12
 
 [carts]
-35.227.109.131
+192.168.61.13
