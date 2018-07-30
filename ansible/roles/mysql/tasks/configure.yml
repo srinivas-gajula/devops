@@ -14,8 +14,8 @@
    tags:
     - configure
 
-- debug:
-    msg: "{{ msg.split('\n') }}"
+ - debug:
+     msg: "{{ msg.split('\n') }}"
 
  - name: create mysql databases
    mysql_db:
