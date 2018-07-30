@@ -7,8 +7,9 @@
 
 - name: copy images from static files
   copy: 
-    src: /tmp/catalogue-1.0.1/images/*
+    src: /tmp/catalogue-1.0.1/images/
     dest: /images/
+    directory_mode: yes
     mode: 0755
 
 - name: create releases directory
