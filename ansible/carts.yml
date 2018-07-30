@@ -2,6 +2,5 @@
   - hosts: carts
     become: yes
     roles:
-      - { role: undergreen.mongodb }
       - { role: carts, tags: ['deploy'] }
       

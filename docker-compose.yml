@@ -58,6 +58,12 @@ services:
     domainname: codespaces.io
     hostname: carts
     restart: always
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: admin123
   jenkins:
     image: schoolofdevops/jenkins
     ports:
