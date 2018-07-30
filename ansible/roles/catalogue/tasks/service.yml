@@ -6,9 +6,10 @@
     remote_src: yes
 
 - name: copy images from static files
-  synchronize: 
-    src: /tmp/catalogue-1.0.1/images/
+  copy: 
+    src: /tmp/catalogue-1.0.1/images/*
     dest: /images/
+    mode: 0755
 
 - name: create releases directory
   file:
