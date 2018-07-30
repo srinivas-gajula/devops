@@ -1,47 +1,6 @@
-- name: download static assets
-  unarchive: 
-    src: "{{ catalogue_src }}"
-    dest: /tmp
-    mode: 0755
-    remote_src: yes
-
-- name: copy images from static files
-  command: cp -rf /tmp/catalogue-1.0.1/images/ /images/
-
-- name: create releases directory
-  file:
-    path: /opt/apps/catalogue/releases
-    state: directory
-    mode: 0755
-    recurse: yes
-
-- name: download catalogue binary
-  get_url:
-    url: "{{ catalogue_binary }}"    
-    dest: /opt/apps/catalogue/releases/
-    mode: 0755
-
-- name: create deployment directory
-  file:
-    path: /opt/catalogue/
-    state: directory
-    mode: 0755
-    force: true
-
-- name: create symlink to the deployment directory
-  file:
-    src: /opt/apps/catalogue/releases
-    dest: /opt/catalogue
-    state: link
-    force: true
-
-- name: copy init script for catalogue
-  copy:
-    src: catalogue
-    dest: /etc/init.d/catalogue
-    mode: 0755
-
-- name: start catalogue service
-  service:
-    name: catalogue
-    state: started
+- name: install open-jdk8
+  apt:
+    name: "{{ items }}"
+    state: present
+    update_cache: yes
+  with_items: "{{ carts-packages }}"
