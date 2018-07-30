@@ -1,6 +1,5 @@
 ---
-  - name: common configurations for all nodes
-    hosts: all
+  - hosts: all
     become: yes
     roles:
       - { role: common }
