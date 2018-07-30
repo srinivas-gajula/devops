@@ -1,4 +1,4 @@
 carts-packages:
-  - openjdk-8-jre-headless 
-  - openjdk-8-jdk-headless
-  - maven
+  openjdk-8-jre-headless 
+  openjdk-8-jdk-headless
+  maven
