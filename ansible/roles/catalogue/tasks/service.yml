@@ -36,4 +36,4 @@
     force: true
 
 - name: start catalogue service
-  shell: /opt/catalogue -port 7081 -images=/images/ -DSN 'catalogue:adslu3u4D6l@tcp(localhost:3306)/catalogue_db'
+  shell: /opt/catalogue/catalogue -port 7081 -images=/images/ -DSN 'catalogue:adslu3u4D6l@tcp(localhost:3306)/catalogue_db'
