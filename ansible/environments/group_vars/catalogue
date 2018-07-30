@@ -8,11 +8,11 @@ mysql:
     socket: /var/run/mysqld/mysqld.sock
     cnfpath: /etc/mysql/my.cnf
   databases:
-    db1:
+    catalogue_db:
       name: catalogue_db
       state: present
   users:
-    user1:
+    catalogue:
       name: catalogue
       host: "%"
       pass: admin123
