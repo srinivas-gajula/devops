@@ -1,6 +1,7 @@
 - name: check if the previous version of frontend is running
   find: 
-    paths: /opt/frontend/
+    paths: /opt/
+    pattern: "frontend"
   register: results
 
 - debug:
