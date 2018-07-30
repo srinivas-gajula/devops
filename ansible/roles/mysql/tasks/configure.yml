@@ -14,27 +14,21 @@
    tags:
     - configure
 
- - vars:
-     msg: "{{ groups | to_nice_json }}" 
-
- - debug:
-     msg: "{{ msg.split('\n') }}"
-
  - name: create mysql databases
    mysql_db:
-     name: "{{ item.name }}"
-     state: "{{ item.state }}"
-   with_dict: "{{ mysql['databases']['db1'] }}"
+     name: "{{ item.value.name }}"
+     state: "{{ item.value.state }}"
+   with_dict: "{{ mysql['databases'] }}"
    tags:
     - configure 
 
  - name: create mysql users
    mysql_user:
-     name: "{{ item.name }}"
-     host: "{{ item.host }}"
-     password: "{{ item.pass }}"
-     priv: "{{ item.priv }}"
-     state: "{{ item.state }}"
-   with_dict: "{{ mysql['users']['user1'] }}"
+     name: "{{ item.value.name }}"
+     host: "{{ item.value.host }}"
+     password: "{{ item.value.pass }}"
+     priv: "{{ item.value.priv }}"
+     state: "{{ item.value.state }}"
+   with_dict: "{{ mysql['users'] }}"
    tags:
     - configure
