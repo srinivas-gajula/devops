@@ -30,7 +30,6 @@
     path: /opt/frontend
     state: directory
     mode: 0755
-    force: true
 
 - name: create symlink to the deployment directory
   file:
