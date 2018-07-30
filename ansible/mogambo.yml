@@ -1,22 +1,21 @@
----
-  - hosts: all
-    become: yes
-    roles:
-      - { role: common }
----
-  - hosts: frontend
-    become: yes
-    roles:
-      - { role: nodejs }
-      - { role: frontend, tags: ['deploy'] }
----
-  - hosts: catalogue
-    become: yes
-    roles:
-      - { role: mysql }
-      - { role: catalogue, tags: ['deploy'] }     
----
-  - hosts: carts
-    become: yes
-    roles:
-      - { role: carts, tags: ['deploy'] } 
+- hosts: all
+  become: yes
+  roles:
+    - { role: common }
+
+- hosts: frontend
+  become: yes
+  roles:
+    - { role: nodejs }
+    - { role: frontend, tags: ['deploy'] }
+
+- hosts: catalogue
+  become: yes
+  roles:
+    - { role: mysql }
+    - { role: catalogue, tags: ['deploy'] }     
+
+- hosts: carts
+  become: yes
+  roles:
+    - { role: carts, tags: ['deploy'] } 
