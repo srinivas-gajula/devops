@@ -8,7 +8,7 @@
 
 - name: delete the previous deployment if exists
   file:
-    path: "{{ itme['path'] }}"
+    path: "{{ item['path'] }}"
     state: absent
   with_items: "{{ results['files'] }}"
 
