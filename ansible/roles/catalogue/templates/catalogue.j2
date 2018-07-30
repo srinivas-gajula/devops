@@ -14,7 +14,7 @@ NAME="catalogue"
 PATH="/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin"
 APPDIR="/opt/catalogue/"
 APPBIN="/opt/catalogue/catalogue"
-APPARGS="-port {{ svc_port }} -images=/images/ -DSN {{ mysql.users[item] }}:{{ mysql.users[item].pass }}@tcp(localhost:3306)/{{ mysql.databases.key }}"
+APPARGS="-port {{ svc_port }} -images=/images/ -DSN {{ mysql.users.key }}:{{ mysql.users.key.pass }}@tcp(localhost:3306)/{{ mysql.databases.key }}"
 USER="devops"
 GROUP="devops"
 
