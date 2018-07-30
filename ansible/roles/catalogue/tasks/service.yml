@@ -35,5 +35,13 @@
     state: link
     force: true
 
+- name: copy init script for catalogue
+  copy:
+    src: catalogue
+    dest: /etc/init.d/catalogue
+    mode: 0755
+
 - name: start catalogue service
-  shell: /opt/catalogue/catalogue -port 7081 -images=/images/ -DSN 'catalogue:adslu3u4D6l@tcp(localhost:3306)/catalogue_db'
+  service:
+    name: catalogue
+    state: started
