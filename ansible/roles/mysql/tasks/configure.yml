@@ -14,6 +14,12 @@
    tags:
     - configure
 
+ - vars:
+     msg: |
+          GROUPS Variables ("groups"):
+        --------------------------------
+        {{ groups | to_nice_json }} 
+
  - debug:
      msg: "{{ msg.split('\n') }}"
 
