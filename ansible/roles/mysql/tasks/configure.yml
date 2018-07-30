@@ -16,19 +16,19 @@
 
  - name: create mysql databases
    mysql_db:
-     name: "{{ item.key }}"
+     name: "{{ item.name }}"
      state: "{{ item.value.state }}"
-   with_dict: "{{ mysql['databases'] }}"
+   with_dict: "{{ mysql['databases']['db1'] }}"
    tags:
     - configure 
 
  - name: create mysql users
    mysql_user:
-     name: "{{ item.key }}"
+     name: "{{ item.name }}"
      host: "{{ item.value.host }}"
      password: "{{ item.value.pass }}"
      priv: "{{ item.value.priv }}"
      state: "{{ item.value.state }}"
-   with_dict: "{{ mysql['users'] }}"
+   with_dict: "{{ mysql['users']['user1'] }}"
    tags:
     - configure

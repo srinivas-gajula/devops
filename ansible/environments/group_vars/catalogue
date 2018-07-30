@@ -8,10 +8,12 @@ mysql:
     socket: /var/run/mysqld/mysqld.sock
     cnfpath: /etc/mysql/my.cnf
   databases:
-    catalogue_db:
+    db1:
+      name: catalogue_db:
       state: present
   users:
-    catalogue:
+    user1:
+      name: catalogue:
       host: "%"
       pass: admin123
       priv: '*.*:ALL'
@@ -23,8 +25,6 @@ mysql:
     python: python-mysqldb
   server: true
 
-db_name: catalogue_db
-db_user: catalogue
 catalogue_src: https://github.com/udbc/catalogue/archive/1.0.1.tar.gz
 catalogue_binary: https://storage.googleapis.com/vibe-catalogue/catalogue
 svc_port: 7081
