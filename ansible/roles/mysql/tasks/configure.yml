@@ -15,7 +15,7 @@
     - configure
 
  - vars:
-     msg: {{ groups | to_nice_json }} 
+     msg: "{{ groups | to_nice_json }}" 
 
  - debug:
      msg: "{{ msg.split('\n') }}"
