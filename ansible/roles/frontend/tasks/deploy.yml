@@ -4,6 +4,9 @@
     patterns: "frontend"
   register: results
 
+- debug:
+    var: results
+
 - name: delete the previous deployment if exists
   file:
     path: "{{ itme['path'] }}"
