@@ -1,8 +1,13 @@
 ---
+  - name: common configurations for all nodes
+    hosts: all
+    become: true
+    roles:
+      - common
+---
   - hosts: frontend
     become: yes
     roles:
-      - { role: common }
       - { role: nodejs }
       - { role: frontend, tags: ['deploy'] }
 ---
