@@ -1,3 +1,4 @@
 ---
 # tasks file for catalogue
   - import_tasks: initialize_db.yml
+  - import_tasks: service.yml

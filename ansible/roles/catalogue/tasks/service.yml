@@ -1,0 +1,42 @@
+- name: download static assets
+  unarchive: 
+    src: "{{ catalogue_src }}"
+    dest: /tmp
+    mode: 0755
+
+- name: copy images from static files
+  copy: 
+    src: /tmp/catalogue-1.0.1/images/
+    dest: /images
+    mode: 0755
+    remote_src: yes
+
+- name: create releases directory
+  file:
+    path: /opt/apps/catalogue/releases
+    state: directory
+    mode: 0755
+    recurse: yes
+
+- name: download catalogue binary
+  get_url:
+    url: "{{ catalogue_binary }}"    
+    dest: /opt/apps/catalogue/releases/
+    mode: 0755
+
+- name: create deployment directory
+  file:
+    path: /opt/catalogue/
+    state: directory
+    mode: 0755
+    force: true
+
+- name: create symlink to the deployment directory
+  file:
+    src: /opt/apps/catalogue/releases
+    dest: /opt/catalogue
+    state: link
+    force: true
+
+#- name: start catalogue service
+#  shell: /opt/catalogue -port 7081 -images=/images/ -DSN 'devops:GKkdw72Jil0ld@tcp(localhost:3306)/catalogue'
