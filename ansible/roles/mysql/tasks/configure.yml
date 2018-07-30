@@ -14,6 +14,10 @@
    tags:
     - configure
 
+ - debug:
+     msg: "database dict has {{ item.name }} and {{ item.state }}"
+   loop: "{{ lookup('dict', databases) }}"
+
  - name: create mysql databases
    mysql_db:
      name: "{{ item.name }}"
