@@ -3,4 +3,4 @@
     name: "{{ items }}"
     state: present
     update_cache: yes
-  with_items: "{{ carts-packages }}"
+  with_items: "{{ carts_packages }}"
