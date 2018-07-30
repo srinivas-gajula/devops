@@ -16,7 +16,7 @@
 
  - name: create mysql databases
    mysql_db:
-     name: "{{ item.name }}"
+     name: "{{ item.key }}"
      state: "{{ item.value.state }}"
    with_dict: "{{ mysql['databases'] }}"
    tags:
@@ -24,7 +24,7 @@
 
  - name: create mysql users
    mysql_user:
-     name: "{{ item.value.name }}"
+     name: "{{ item.key }}"
      host: "{{ item.value.host }}"
      password: "{{ item.value.pass }}"
      priv: "{{ item.value.priv }}"
