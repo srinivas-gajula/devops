@@ -9,11 +9,11 @@ mysql:
     cnfpath: /etc/mysql/my.cnf
   databases:
     db1:
-      name: catalogue_db:
+      name: catalogue_db
       state: present
   users:
     user1:
-      name: catalogue:
+      name: catalogue
       host: "%"
       pass: admin123
       priv: '*.*:ALL'
