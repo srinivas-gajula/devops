@@ -11,3 +11,4 @@
       state: import
       target: /tmp/dump.sql
     delegate_to: catalogue
+    ignore_errors: true
