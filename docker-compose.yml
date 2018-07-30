@@ -39,7 +39,7 @@ services:
   catalogue:
     image: codespaces/ansible-node-ubuntu-1404:v0.1.0
     ports:
-       - "7081:7981"
+       - "7081:7081"
     networks:
       custom:
         ipv4_address: 192.168.61.12
