@@ -8,7 +8,7 @@
 - name: copy images from static files
   copy: 
     src: /tmp/catalogue-1.0.1/images/
-    dest: /images
+    dest: /images/
     mode: 0755
     remote_src: yes
 
