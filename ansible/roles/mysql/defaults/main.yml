@@ -15,7 +15,7 @@ mysql:
     catalogue:
       host: "%"
       pass: adslu3u4D6l
-      priv: *.*
+      priv: '*.*:ALL'
       state: present
   service: mysql
   pkg:
