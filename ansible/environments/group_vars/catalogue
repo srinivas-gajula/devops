@@ -1,2 +1,2 @@
 catalogue_src: https://github.com/udbc/catalogue/archive/1.0.1.tar.gz
-catalogue_binary: https://s3.amazonaws.com/sod-openedx/catalogue/catalogue
+catalogue_binary: https://storage.googleapis.com/vibe-catalogue/catalogue
