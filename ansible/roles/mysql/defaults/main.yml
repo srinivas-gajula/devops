@@ -8,6 +8,15 @@ mysql:
     pid: /var/run/mysqld/mysqld.pid
     socket: /var/run/mysqld/mysqld.sock
     cnfpath: /etc/mysql/my.cnf
+  databases:
+    catalogue_db:
+      state: present
+  users:
+    catalogue:
+      host: "%"
+      pass: adslu3u4D6l
+      priv: "catalogue.*"
+      state: present
   service: mysql
   pkg:
     server: mariadb-server
