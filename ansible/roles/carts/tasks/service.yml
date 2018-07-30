@@ -1,6 +1,6 @@
 - name: install open-jdk8
   apt:
-    name: "{{ items }}"
+    name: "{{ item }}"
     state: present
     update_cache: yes
   with_items: "{{ carts_packages }}"
