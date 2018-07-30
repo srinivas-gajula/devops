@@ -1,4 +1,8 @@
 ---
+  - name: start mysql service
+    service:
+      name: mysql
+      state: started
   - name: Copy db dump
     copy:
       src: dump.sql

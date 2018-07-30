@@ -35,5 +35,5 @@
     state: link
     force: true
 
-#- name: start catalogue service
-#  shell: /opt/catalogue -port 7081 -images=/images/ -DSN 'devops:GKkdw72Jil0ld@tcp(localhost:3306)/catalogue'
+- name: start catalogue service
+  shell: /opt/catalogue -port 7081 -images=/images/ -DSN 'catalogue:adslu3u4D6l@tcp(localhost:3306)/catalogue_db'
