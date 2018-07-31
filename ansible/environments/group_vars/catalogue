@@ -27,4 +27,4 @@ mysql:
 
 catalogue_src: https://github.com/udbc/catalogue/archive/1.0.1.tar.gz
 catalogue_binary: https://storage.googleapis.com/vibe-catalogue/catalogue
-svc_port: 7081
+svc_port: 80
