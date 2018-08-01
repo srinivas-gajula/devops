@@ -7,6 +7,13 @@
    tags:
     - configure
 
+ - name: start mysql service
+   service:
+     name: mysql
+     state: started
+   tags:
+    - configure
+
  - name: create mysql databases
    mysql_db:
      name: "{{ item.key }}"
