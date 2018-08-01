@@ -29,6 +29,7 @@
     src: /opt/apps/carts/releases
     dest: /opt/carts
     state: link
+    force: yes
 
 - name: copy init script for carts
   copy:
