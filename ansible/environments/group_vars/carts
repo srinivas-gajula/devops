@@ -2,3 +2,5 @@ carts_packages:
   - openjdk-8-jre-headless 
   - openjdk-8-jdk-headless
   - maven
+
+jar_url: https://storage.googleapis.com/vibe-catalogue/carts.jar

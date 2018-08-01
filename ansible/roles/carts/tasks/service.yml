@@ -4,3 +4,39 @@
     state: present
     update_cache: yes
   with_items: "{{ carts_packages }}"
+
+- name: create releases directory
+  file:
+    path: /opt/apps/carts/releases
+    state: directory
+    recurse: yes
+    mode: 0755
+
+- name: download jar package from registry
+  get_url:
+    url: "{{ jar_url }}"
+    dest: /opt/apps/carts/releases
+    mode: 0755
+
+- name: create deployment directory
+  file:
+    path: /opt/carts
+    state: directory
+    mode: 0755
+
+- name: create symlink to the deployment directory
+  file:
+    src: /opt/apps/carts/releases
+    dest: /opt/carts
+    state: link
+
+- name: copy init script for carts
+  copy:
+    src: carts
+    dest: /etc/init.d/carts
+    mode: 0755
+
+- name: start carts service
+  service:
+    name: carts
+    state: started
