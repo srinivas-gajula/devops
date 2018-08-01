@@ -30,6 +30,7 @@
     dest: /opt/carts
     state: link
     force: yes
+  run_once: true
 
 - name: copy init script for carts
   copy:
