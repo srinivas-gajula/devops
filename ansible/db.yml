@@ -1,7 +1,0 @@
----
-  - hosts: catalogue_db
-    become: yes
-    vars_files:
-      - vars.yml
-    roles:
-      - { role: mysql  }
