@@ -12,8 +12,8 @@
 
 NAME="carts"
 PATH="/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin"
-APPDIR="/usr/bin/java"
-APPBIN="/usr/bin/java"
+APPDIR="/opt/carts"
+APPBIN="/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java"
 APPARGS="-jar /opt/carts/carts.jar"
 USER="devops"
 GROUP="devops"
