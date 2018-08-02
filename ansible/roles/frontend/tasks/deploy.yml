@@ -5,12 +5,6 @@
     recurse: yes
     mode: 0755
 
-- name: remove existing symlink of previous version
-  file:
-    path: /opt/frontend/
-    state: absent
-  when: frontend.update == true
-
 - name: download release from registry
   unarchive:
     src: "{{ frontend.release_url }}"
