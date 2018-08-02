@@ -23,6 +23,7 @@
     src: /opt/apps/frontend/releases/
     dest: /opt/frontend/
     state: link
+    force: true
 
 - name: copy init script for frontend
   copy:
