@@ -1,0 +1,19 @@
+- name: remove existing symlink of previous version
+  file:
+    path: /opt/frontend/
+    state: absent
+  when: frontend.update == true 
+- name: download the new version of frontend
+  unarchive:
+    src: "{{ frontend.release_url }}"
+    dest: /opt/apps/frontend/releases/
+    remote_src: yes
+    mode: 0755
+  when: frontend.update == true
+- name: create symlink to the deployment directory
+  file:
+    src: "/opt/apps/frontend/releases/{{ frontend.release_version }}"
+    dest: /opt/frontend
+    state: link
+  when: frontend.update == true
+  

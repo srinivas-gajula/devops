@@ -15,9 +15,9 @@ additional:
     - /opt/go/bin
 
 frontend:
-  release_url: https://github.com/udbc/front-end/archive/v6.0.tar.gz
-  release_version: front-end-6.0
-  update: false
+  release_url: https://github.com/udbc/front-end/archive/v6.1.tar.gz
+  release_version: front-end-6.1
+  update: true
 
 env:
   variables:
