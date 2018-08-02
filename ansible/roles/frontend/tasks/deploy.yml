@@ -32,8 +32,10 @@
 
 - name: install node application dependencies before start
   npm:
-    path: /opt/apps/frontend/releases/"{{ frontend.release_version }}"
+    path: /opt/frontend/"{{ item }}"
     state: latest
+  with_fileglob:
+    - front-end-*.*
 
 - name: start frontend service
   service:
