@@ -8,14 +8,18 @@
 - name: download release from registry
   unarchive:
     src: "{{ frontend.release_url }}"
-    dest: /opt/apps/frontend/releases
+    dest: /opt/apps/frontend/releases/
     remote_src: yes
     mode: 0755
+  register: release
+
+- debug:
+    var: release
 
 - name: create symlink to the deployment directory
   file:
-    src: /opt/apps/frontend/releases
-    dest: /opt/frontend
+    src: /opt/apps/frontend/
+    dest: /opt/frontend/
     state: link
 
 - name: copy init script for frontend
@@ -26,7 +30,7 @@
 
 - name: install node application dependencies before start
   npm:
-    path: /opt/apps/frontend/releases
+    path: /opt/apps/frontend/"{{ frontend.release_version }}"
     state: latest
 
 - name: start frontend service
