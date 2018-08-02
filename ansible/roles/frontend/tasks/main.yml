@@ -2,7 +2,7 @@
 # tasks file for frontend
 - include_tasks: deploy.yml
   tags: [deploy]
-  when: not frontend.update
+  when: not update
 - include_tasks: update.yml
   tags: [update]
-  when: frontend.update 
+  when: update

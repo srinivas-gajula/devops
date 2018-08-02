@@ -1,3 +1,8 @@
+- name: stop frontend service
+  service: 
+    name: frontend
+    state: stopped
+
 - name: remove existing symlink of previous version
   file:
     path: /opt/frontend
