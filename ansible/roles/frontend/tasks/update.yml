@@ -1,6 +1,6 @@
 - name: remove existing symlink of previous version
   file:
-    path: /opt/frontend/
+    path: /opt/frontend
     state: absent
 - name: download the new version of frontend
   unarchive:
