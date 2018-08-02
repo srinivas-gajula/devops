@@ -2,15 +2,23 @@
   file:
     path: /opt/frontend
     state: absent
+
 - name: download the new version of frontend
   unarchive:
     src: "{{ frontend.release_url }}"
     dest: /opt/apps/frontend/releases/
     remote_src: yes
     mode: 0755
+
+- name: install node application dependencies before start
+  npm:
+    path: "/opt/apps/frontend/releases/{{ frontend.release_version }}"
+    state: latest
+
 - name: create symlink to the deployment directory
   file:
     src: "/opt/apps/frontend/releases/{{ frontend.release_version }}"
     dest: /opt/frontend
     state: link
-  
+  notify:
+    - restart frontend
