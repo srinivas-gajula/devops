@@ -7,7 +7,7 @@
 
 - name: download release from registry
   unarchive:
-    src: "{{ release_url }}"
+    src: "{{ frontend.release_url }}"
     dest: /opt/apps/frontend/releases
     remote_src: yes
     mode: 0755

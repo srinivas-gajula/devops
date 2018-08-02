@@ -14,7 +14,8 @@ additional:
     - /usr/local/go/bin
     - /opt/go/bin
 
-release_url: https://github.com/udbc/front-end/archive/v6.0.tar.gz
+frontend:
+  release_url: https://github.com/udbc/front-end/archive/v6.0.tar.gz
 
 env:
   variables:
