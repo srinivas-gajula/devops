@@ -20,7 +20,7 @@
 
 - name: create symlink to the deployment directory
   file:
-    src: /opt/apps/frontend/releases/'{{ frontend.release_version }}'
+    src: "/opt/apps/frontend/releases/{{ frontend.release_version }}"
     dest: /opt/frontend
     state: link
     force: true
@@ -33,7 +33,7 @@
 
 - name: install node application dependencies before start
   npm:
-    path: /opt/apps/frontend/releases/'{{ frontend.release_version }}'
+    path: "/opt/apps/frontend/releases/{{ frontend.release_version }}"
     state: latest
 
 - name: start frontend service
