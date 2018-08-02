@@ -9,7 +9,7 @@
   file:
     path: /opt/frontend/
     state: absent
-  when: "{{ frontend.update }}" == true
+  when: frontend.update == true
 
 - name: download release from registry
   unarchive:
