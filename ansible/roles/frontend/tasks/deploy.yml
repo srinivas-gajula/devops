@@ -20,7 +20,7 @@
 
 - name: create symlink to the deployment directory
   file:
-    src: /opt/apps/frontend/releases/
+    src: /opt/apps/frontend/releases/front-end-6.0
     dest: /opt/frontend
     state: link
     force: true
